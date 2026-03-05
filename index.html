@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design for Impact - Strategic Leadership Advisory</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ─────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --teal:        #1A5C5A;
+  --teal-mid:    #236866;
+  --teal-light:  #2a7a78;
+  --slate:       #3D4F52;
+  --gold:        #B5883A;
+  --gold-light:  #C9A050;
+  --sage:        #E8F0EF;
+  --cream:       #FAF6EE;
+  --dark:        #1a1a1a;
+  --mid:         #4a4a4a;
+  --light:       #7a7a7a;
+  --border:      rgba(26,92,90,0.12);
+  --white:       #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--dark);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* ── TYPOGRAPHY ──────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── LAYOUT ──────────────────────────────────────── */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.container--narrow {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+section { position: relative; }
+
+/* ── NAV ─────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 48px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(26,92,90,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: background 0.3s;
+}
+
+.nav-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-mark {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nav-logo-mark svg { width: 28px; height: 28px; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--white); }
+
+.nav-cta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal) !important;
+  background: var(--white);
+  padding: 10px 22px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.2s !important;
+}
+
+.nav-cta:hover {
+  background: var(--gold) !important;
+  color: var(--white) !important;
+}
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  background: var(--teal);
+  display: flex;
+  align-items: center;
+  padding: 120px 48px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(181,136,58,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 50%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+}
+
+.hero-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-label::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  font-size: clamp(40px, 5.5vw, 72px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 32px;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+}
+
+.hero-sub {
+  font-size: 19px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.72);
+  max-width: 580px;
+  line-height: 1.65;
+  margin-bottom: 48px;
+}
+
+.hero-sub strong {
+  color: rgba(255,255,255,0.95);
+  font-weight: 500;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-primary {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: var(--white);
+  padding: 16px 36px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background: var(--gold);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-ghost:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.hero-scroll-line {
+  width: 48px;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* ── SECTION COMMONS ─────────────────────────────── */
+.section-header {
+  margin-bottom: 64px;
+}
+
+.section-header .label {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 20px;
+}
+
+.section-header p {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--mid);
+  max-width: 620px;
+  line-height: 1.7;
+}
+
+/* ── PROBLEM SECTION ─────────────────────────────── */
+.problem {
+  background: var(--cream);
+  padding: 120px 0;
+}
+
+.problem-intro {
+  font-size: clamp(22px, 3vw, 36px);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--teal);
+  line-height: 1.25;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.problem-body {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.75;
+  max-width: 660px;
+  margin-bottom: 48px;
+}
+
+.problem-body strong {
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.symptoms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  margin-top: 64px;
+}
+
+.symptom {
+  background: var(--white);
+  padding: 32px;
+  transition: background 0.2s;
+}
+
+.symptom:hover { background: var(--sage); }
+
+.symptom-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--teal);
+  opacity: 0.12;
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+
+.symptom h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.symptom p {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.6;
+}
+
+/* ── PROMISE SECTION ──────────────────────────────── */
+.promise {
+  background: var(--teal);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.promise::before {
+  content: '';
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.promise::after {
+  content: '';
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid rgba(181,136,58,0.15);
+}
+
+.promise .label { color: rgba(255,255,255,0.45); }
+
+.promise h2 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+  max-width: 700px;
+}
+
+.promise-body {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.75;
+  max-width: 640px;
+  margin-bottom: 64px;
+}
+
+.promise-body strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.outcomes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: rgba(255,255,255,0.08);
+}
+
+.outcome {
+  background: rgba(255,255,255,0.05);
+  padding: 32px 36px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.outcome:hover {
+  background: rgba(255,255,255,0.09);
+  border-left-color: var(--gold);
+}
+
+.outcome-before {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.35);
+  text-decoration: line-through;
+  margin-bottom: 8px;
+}
+
+.outcome-after {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.4;
+}
+
+.outcome-arrow {
+  color: var(--gold);
+  font-size: 12px;
+  margin: 6px 0;
+}
+
+/* ── METHOD SECTION ───────────────────────────────── */
+.method {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.method-framework {
+  margin: 64px 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.framework-node {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.framework-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.framework-circle--teal {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.framework-circle--slate {
+  background: var(--slate);
+  color: var(--white);
+}
+
+.framework-circle--gold {
+  background: var(--gold);
+  color: var(--white);
+}
+
+.framework-node h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.framework-node p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--light);
+  line-height: 1.55;
+}
+
+.framework-arrow {
+  align-self: center;
+  color: var(--gold);
+  font-size: 24px;
+  padding-top: 0;
+  margin-top: -30px;
+  opacity: 0.7;
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  margin-top: 64px;
+}
+
+.principle {
+  background: var(--white);
+  padding: 28px 32px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: background 0.2s;
+}
+
+.principle:hover { background: var(--sage); }
+
+.principle-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.principle p {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--mid);
+  line-height: 1.5;
+}
+
+.principle strong {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+/* ── JOURNEY SECTION ──────────────────────────────── */
+.journey {
+  background: var(--cream);
+  padding: 120px 0;
+}
+
+.phases {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.phase {
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr;
+  gap: 0;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.phase:hover { transform: translateX(4px); }
+
+.phase-num {
+  background: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: -0.04em;
+  flex-shrink: 0;
+}
+
+.phase-main {
+  padding: 36px 40px;
+  border-right: 1px solid var(--border);
+}
+
+.phase-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.phase h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.phase-meta {
+  font-size: 13px;
+  color: var(--light);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.phase p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.65;
+}
+
+.phase-benefits {
+  padding: 36px 40px;
+}
+
+.phase-benefits-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 16px;
+}
+
+.phase-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.5;
+}
+
+.phase-benefit::before {
+  content: '→';
+  color: var(--gold);
+  flex-shrink: 0;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* ── PROOF SECTION ────────────────────────────────── */
+.proof {
+  background: var(--slate);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.proof::before {
+  content: '"';
+  position: absolute;
+  top: -40px;
+  left: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 400px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+}
+
+.proof-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.proof-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.proof blockquote {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.4;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+
+.proof blockquote strong {
+  font-weight: 700;
+  font-style: normal;
+  color: rgba(255,255,255,0.95);
+}
+
+.proof-details h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.proof-details p {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.proof-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  margin-top: 32px;
+}
+
+.proof-stat {
+  background: rgba(255,255,255,0.04);
+  padding: 24px;
+}
+
+.proof-stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+
+.proof-stat-label {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.4;
+}
+
+/* ── ABOUT SECTION ────────────────────────────────── */
+.about {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.partners {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--border);
+  margin-top: 64px;
+}
+
+.partner {
+  background: var(--white);
+  padding: 48px;
+  transition: background 0.2s;
+}
+
+.partner:hover { background: var(--sage); }
+
+.partner-role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.partner h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 4px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.partner-superpower {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 300;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.partner p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.partner-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: var(--sage);
+  padding: 5px 12px;
+  border-radius: 2px;
+}
+
+.together-bar {
+  background: var(--teal);
+  padding: 36px 48px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.together-bar .together-line {
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.together-bar p {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.together-bar strong {
+  color: var(--white);
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* ── FIT SECTION ─────────────────────────────────── */
+.fit {
+  background: var(--cream);
+  padding: 100px 0;
+}
+
+.fit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--border);
+}
+
+.fit-col {
+  background: var(--white);
+  padding: 48px;
+}
+
+.fit-col--yes .fit-header { color: var(--teal); }
+.fit-col--no .fit-header { color: var(--light); }
+
+.fit-header {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fit-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.2;
+}
+
+.fit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.5;
+}
+
+.fit-item--yes::before {
+  content: '✓';
+  color: var(--teal);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+.fit-item--no::before {
+  content: '×';
+  color: var(--light);
+  font-weight: 400;
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* ── CTA SECTION ─────────────────────────────────── */
+.cta-final {
+  background: var(--teal);
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-final::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(181,136,58,0.07) 0%, transparent 70%);
+}
+
+.cta-final .label { color: rgba(255,255,255,0.4); margin-bottom: 20px; display: block; }
+
+.cta-final h2 {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.cta-final p {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.68);
+  max-width: 560px;
+  margin: 0 auto 48px;
+  line-height: 1.65;
+  position: relative;
+}
+
+.cta-final .btn-primary {
+  font-size: 14px;
+  padding: 18px 44px;
+  position: relative;
+}
+
+.cta-note {
+  margin-top: 24px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  position: relative;
+}
+
+/* ── CONTACT SECTION ─────────────────────────────── */
+.contact {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--light);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--dark);
+  background: var(--sage);
+  border: 1px solid transparent;
+  padding: 14px 18px;
+  border-radius: 2px;
+  outline: none;
+  transition: all 0.2s;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--teal);
+  background: var(--white);
+}
+
+.form-group textarea { height: 120px; }
+
+.form-submit {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--teal);
+  padding: 16px 36px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.form-submit:hover {
+  background: var(--gold);
+  transform: translateY(-1px);
+}
+
+.contact-info h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contact-info > p {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.contact-detail {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.contact-detail-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--light);
+  min-width: 70px;
+}
+
+.contact-detail-value {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.contact-detail-value a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.contact-reassurance {
+  background: var(--sage);
+  padding: 24px 28px;
+  border-left: 3px solid var(--gold);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ── FOOTER ──────────────────────────────────────── */
+footer {
+  background: var(--dark);
+  padding: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.footer-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
+  width: 100%;
+}
+
+/* ── PAGE SECTIONS (show/hide) ───────────────────── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── WHAT WE DO PAGE ─────────────────────────────── */
+.services {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--border);
+  margin-top: 64px;
+}
+
+.service-card {
+  background: var(--white);
+  padding: 48px;
+  transition: background 0.2s;
+}
+
+.service-card:hover { background: var(--sage); }
+
+.service-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+}
+
+.service-card .service-tagline {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--light);
+  margin-bottom: 20px;
+}
+
+.service-card p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.service-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--teal);
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.service-duration {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--light);
+  margin-top: 4px;
+}
+
+/* ── HOW WE HELP PAGE ────────────────────────────── */
+.how-help {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.problem-types {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 64px;
+}
+
+.problem-type {
+  background: var(--cream);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.problem-type:hover { transform: translateX(4px); }
+
+.problem-type-label {
+  background: var(--teal);
+  padding: 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.problem-type-label h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.25;
+}
+
+.problem-type-label p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  font-style: italic;
+}
+
+.problem-type-content {
+  padding: 40px;
+  background: var(--white);
+}
+
+.problem-type-content p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.problem-type-content .phase-benefit {
+  font-size: 14px;
+}
+
+.partners-note {
+  background: var(--teal);
+  padding: 64px;
+  margin-top: 80px;
+}
+
+.partners-note h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.partners-note p {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+/* ── ANIMATIONS ───────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.fade-up-1 { animation-delay: 0.1s; }
+.fade-up-2 { animation-delay: 0.25s; }
+.fade-up-3 { animation-delay: 0.4s; }
+.fade-up-4 { animation-delay: 0.55s; }
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .container, .container--narrow { padding: 0 24px; }
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 24px 80px; }
+  .outcomes { grid-template-columns: 1fr; }
+  .method-framework { grid-template-columns: 1fr; gap: 32px; }
+  .framework-arrow { transform: none; margin: -10px auto; display: block; text-align: center; font-size: 20px; }
+  .phase { grid-template-columns: 60px 1fr; }
+  .phase-benefits { display: none; }
+  .proof-content { grid-template-columns: 1fr; gap: 48px; }
+  .partners { grid-template-columns: 1fr; }
+  .fit-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .service-cards { grid-template-columns: 1fr; }
+  .problem-type { grid-template-columns: 1fr; }
+  footer { padding: 32px 24px; }
+  .footer-links { flex-wrap: wrap; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────── -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="9" cy="14" r="7" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+        <circle cx="19" cy="14" r="7" stroke="#B5883A" stroke-width="1.5"/>
+        <path d="M14 8.5 L14 19.5" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+      </svg>
+    </div>
+    Design for Impact
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('what-we-do')">What We Do</a></li>
+    <li><a href="#" onclick="showPage('how-we-help')">How We Help</a></li>
+    <li><a href="#" onclick="showPage('about')">About</a></li>
+    <li><a href="#" class="nav-cta" onclick="showPage('contact')">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- HOME PAGE                                      -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-label fade-up fade-up-1">Strategic Leadership Advisory</div>
+      <h1 class="fade-up fade-up-2">
+        Your strategic<br>
+        secret weapon -<br>
+        <em>working behind<br>the scenes.</em>
+      </h1>
+      <p class="hero-sub fade-up fade-up-3">
+        <strong>Change your leadership, change your results.</strong><br>
+        We help ambitious leaders discover where they create disproportionate value - and build the strategy and systems to operate from that place every day.
+      </p>
+      <div class="hero-actions fade-up fade-up-4">
+        <a href="#" class="btn-primary" onclick="showPage('contact')">Start a Conversation →</a>
+        <a href="#" class="btn-ghost" onclick="showPage('what-we-do')">Explore the Method →</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span class="hero-scroll-line"></span>
+      Scroll to explore
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="container">
+      <p class="problem-intro">Most organizations don't have an effort problem. They have a focus problem.</p>
+      <p class="problem-body">
+        If your results need to change, <strong>your leadership needs to change first.</strong><br><br>
+        You're working harder than ever. Your team is capable. But strategy is diffuse, decisions bottleneck around you, and execution keeps stalling. You're spending your best thinking on work that isn't yours to do.
+      </p>
+      <div class="symptoms">
+        <div class="symptom">
+          <div class="symptom-num">01</div>
+          <h4>You're the bottleneck</h4>
+          <p>Decisions wait for you. Teams can't move without your sign-off. Your calendar owns you.</p>
+        </div>
+        <div class="symptom">
+          <div class="symptom-num">02</div>
+          <h4>Strategy lives in decks, not decisions</h4>
+          <p>The priorities look right on paper. But day-to-day work doesn't reflect them.</p>
+        </div>
+        <div class="symptom">
+          <div class="symptom-num">03</div>
+          <h4>Your team is talented but misaligned</h4>
+          <p>Good people working in silos. Everyone busy. Not everyone pulling in the same direction.</p>
+        </div>
+        <div class="symptom">
+          <div class="symptom-num">04</div>
+          <h4>Effort isn't translating to results</h4>
+          <p>You know something is off. You can feel it. But you can't quite name it.</p>
+        </div>
+        <div class="symptom">
+          <div class="symptom-num">05</div>
+          <h4>You're operating outside your genius</h4>
+          <p>The work that energizes you keeps getting squeezed out by everything else.</p>
+        </div>
+        <div class="symptom">
+          <div class="symptom-num">06</div>
+          <h4>Sustainability feels like a side project</h4>
+          <p>Your mission matters to you. But impact and performance feel like they're competing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISE -->
+  <section class="promise">
+    <div class="container">
+      <span class="label">What becomes possible</span>
+      <h2>Stop being the bottleneck.<br>Start being the multiplier.</h2>
+      <p class="promise-body">
+        Every leader has a zone of disproportionate value - work that draws on their deepest instincts, energizes them, and consistently produces outsized results. <strong>Our work is to find it, protect it, and build everything else around it.</strong>
+      </p>
+      <div class="outcomes">
+        <div class="outcome">
+          <div class="outcome-before">Working harder than ever, results plateauing</div>
+          <div class="outcome-arrow">↓</div>
+          <div class="outcome-after">Operating in your zone of genius every day</div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-before">Strategy lives in presentations, not decisions</div>
+          <div class="outcome-arrow">↓</div>
+          <div class="outcome-after">Every team member has clear line of sight to what matters</div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-before">Decisions bottleneck around you</div>
+          <div class="outcome-arrow">↓</div>
+          <div class="outcome-after">Your team owns outcomes, not just tasks</div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-before">Impact and performance feel like tradeoffs</div>
+          <div class="outcome-arrow">↓</div>
+          <div class="outcome-after">Purpose woven into how you grow and compete</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD TEASER -->
+  <section class="method">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Our Approach</span>
+        <h2>The Strategic Genius Method</h2>
+        <p>Durable advantage emerges when two forces align: where <em>you</em> create disproportionate value, and where your <em>organization</em> uniquely wins. We find that intersection - and build the strategy and systems that make it last.</p>
+      </div>
+
+      <div class="method-framework">
+        <div class="framework-node">
+          <div class="framework-circle framework-circle--teal">Leadership<br>Genius</div>
+          <h4>Where you create disproportionate value</h4>
+          <p>Your instincts, capabilities, and energy - clarified and protected</p>
+        </div>
+        <div class="framework-arrow">+</div>
+        <div class="framework-node">
+          <div class="framework-circle framework-circle--slate">Org<br>Genius</div>
+          <h4>Where your organization uniquely wins</h4>
+          <p>Your competitive advantage, anchored in purpose and market need</p>
+        </div>
+        <div class="framework-arrow">→</div>
+        <div class="framework-node">
+          <div class="framework-circle framework-circle--gold">Integrated<br>Strategy</div>
+          <h4>Focused around where advantage and mission converge</h4>
+          <p>Clear, differentiated, and tied to what you uniquely do well</p>
+        </div>
+        <div class="framework-arrow">→</div>
+        <div class="framework-node">
+          <div class="framework-circle framework-circle--teal" style="background: var(--slate);">Leadership<br>OS</div>
+          <h4>The systems that translate strategy into sustained execution</h4>
+          <p>Decision architecture, operating cadence, accountability - built to run without you in every room</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: 48px;">
+        <a href="#" class="btn-primary" style="background: var(--teal); color: white;" onclick="showPage('what-we-do')">Explore the Full Method →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="proof">
+    <div class="container">
+      <div class="proof-content">
+        <div>
+          <div class="proof-label">Proof of Concept</div>
+          <blockquote>
+            "The strategy lived in leadership conversations - <strong>but not in the business.</strong> We changed that."
+          </blockquote>
+          <p style="font-size:15px; font-weight:300; color:rgba(255,255,255,0.55); line-height:1.7;">
+            When Ali was Chief Strategy Officer at Burton Snowboards, she brought in Kristy to solve a problem every scaling organization faces. Together, they designed a strategy cascade from company goals to individual contributors - and built the operating rhythm to sustain it. Every leader left with clear line of sight from their daily work to what mattered most.
+          </p>
+          <a href="#" onclick="showPage('about')" style="font-family:Montserrat,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:none;">Meet Ali & Kristy →</a>
+        </div>
+        <div>
+          <div class="proof-stats">
+            <div class="proof-stat">
+              <div class="proof-stat-num">18</div>
+              <div class="proof-stat-label">Years Ali spent inside Burton, running every part of the business</div>
+            </div>
+            <div class="proof-stat">
+              <div class="proof-stat-num">$300M</div>
+              <div class="proof-stat-label">Business Kristy led at eBay - building systems that drive growth at scale</div>
+            </div>
+            <div class="proof-stat">
+              <div class="proof-stat-num">40+</div>
+              <div class="proof-stat-label">Combined years of executive leadership experience</div>
+            </div>
+            <div class="proof-stat">
+              <div class="proof-stat-num">B Corp</div>
+              <div class="proof-stat-label">First snowboard company certified, led by Ali's sustainability strategy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-final">
+    <div class="container">
+      <span class="label">Ready when you are</span>
+      <h2>Find out what's possible.</h2>
+      <p>Every engagement starts with a complimentary 45-minute discovery conversation. No pitch, no pressure. We listen first - and we'll tell you honestly if we're the right fit.</p>
+      <a href="#" class="btn-primary" onclick="showPage('contact')">Book a Discovery Call →</a>
+      <p class="cta-note">We work with a small number of clients at a time - by design.</p>
+    </div>
+  </section>
+
+</div><!-- end home -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- WHAT WE DO PAGE                                -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="page-what-we-do" class="page">
+  <div style="height:72px; background:var(--teal);"></div>
+
+  <section style="background:var(--teal); padding: 80px 0 100px;">
+    <div class="container">
+      <span class="label" style="color:rgba(255,255,255,0.4);">Our Approach</span>
+      <h1 style="font-size:clamp(32px,4vw,56px); font-weight:800; color:var(--white); margin:16px 0 20px; letter-spacing:-0.03em; font-family:Montserrat,sans-serif;">The Strategic Genius Method</h1>
+      <p style="font-size:19px; font-weight:300; color:rgba(255,255,255,0.68); max-width:620px; line-height:1.65;">Four phases from insight to lasting impact. Each builds on the last - and every one delivers immediate, tangible value.</p>
+    </div>
+  </section>
+
+  <section class="journey" style="padding-top: 80px;">
+    <div class="container">
+      <div class="method-framework" style="margin-bottom:80px;">
+        <div class="framework-node">
+          <div class="framework-circle framework-circle--teal">Leadership<br>Genius</div>
+          <h4>Where you create disproportionate value</h4>
+          <p>Your instincts, energy, and highest-leverage work - made explicit</p>
+        </div>
+        <div class="framework-arrow">+</div>
+        <div class="framework-node">
+          <div class="framework-circle framework-circle--slate">Org<br>Genius</div>
+          <h4>Where your organization uniquely wins</h4>
+          <p>Competitive advantage anchored in purpose, capability & market need</p>
+        </div>
+        <div class="framework-arrow">→</div>
+        <div class="framework-node">
+          <div class="framework-circle framework-circle--gold">Integrated<br>Strategy</div>
+          <h4>Focused around where advantage and mission converge</h4>
+          <p>Clear, differentiated strategy that's unmistakably yours</p>
+        </div>
+        <div class="framework-arrow">→</div>
+        <div class="framework-node">
+          <div class="framework-circle framework-circle--teal" style="background: var(--slate);">Leadership<br>OS</div>
+          <h4>Systems that translate strategy into sustained execution</h4>
+          <p>Everything aligned. Everyone moving. Results that compound.</p>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <span class="label">The Client Journey</span>
+        <h2>Four phases. One direction.</h2>
+        <p>Most clients begin with the Diagnostic and move through at their own pace. Each phase stands alone - and the journey compounds.</p>
+      </div>
+
+      <div class="phases">
+        <div class="phase">
+          <div class="phase-num">01</div>
+          <div class="phase-main">
+            <div class="phase-tag">Entry Point</div>
+            <h3>Strategic Genius Diagnostic</h3>
+            <div class="phase-meta">$6,000  ·  2–3 weeks</div>
+            <p>A focused assessment of where your leadership energy is being spent versus where it creates the most value. We surface what leaders rarely have the space to examine - then hand you a clear narrative of what we see and a concrete path forward.</p>
+          </div>
+          <div class="phase-benefits">
+            <div class="phase-benefits-label">You walk away with</div>
+            <div class="phase-benefit">Written narrative of your core challenges</div>
+            <div class="phase-benefit">Assessment across all five diagnostic layers</div>
+            <div class="phase-benefit">2–3 actionable playbooks you can use immediately</div>
+            <div class="phase-benefit">90-min readout session with both partners</div>
+          </div>
+        </div>
+
+        <div class="phase">
+          <div class="phase-num">02</div>
+          <div class="phase-main">
+            <div class="phase-tag">Core Transformation</div>
+            <h3>The Two-Part Genius Assessment</h3>
+            <div class="phase-meta">$18,000–$48,000  ·  6–10 weeks</div>
+            <p>The heart of our work. A Leadership Genius Deep Dive reveals where you create outsized results - and where you're leaking leverage. An Organizational Genius Assessment finds your true competitive advantage. Together, they produce a strategy that's unmistakably yours.</p>
+          </div>
+          <div class="phase-benefits">
+            <div class="phase-benefits-label">You walk away with</div>
+            <div class="phase-benefit">Leadership Focus Strategy - your personal mandate</div>
+            <div class="phase-benefit">Integrated Business & Impact Strategy</div>
+            <div class="phase-benefit">Organizational Genius Assessment</div>
+            <div class="phase-benefit">Clear differentiation rooted in purpose</div>
+          </div>
+        </div>
+
+        <div class="phase">
+          <div class="phase-num">03</div>
+          <div class="phase-main">
+            <div class="phase-tag">Make It Executable</div>
+            <h3>Leadership Operating System Design</h3>
+            <div class="phase-meta">$15,000–$38,000  ·  standalone or in Advisory</div>
+            <p>Most strategies fail not because they're wrong - but because the organization has no system to run them. We build the operating infrastructure that makes your strategy executable: decision architecture, strategic cadence, accountability structures, and team alignment.</p>
+          </div>
+          <div class="phase-benefits">
+            <div class="phase-benefits-label">You walk away with</div>
+            <div class="phase-benefit">Decision architecture - who owns what</div>
+            <div class="phase-benefit">Strategic cadence (WBR, MBR, QBR) design</div>
+            <div class="phase-benefit">Goals cascade to every level of the org</div>
+            <div class="phase-benefit">Templates, meeting scripts, accountability loops</div>
+          </div>
+        </div>
+
+        <div class="phase">
+          <div class="phase-num">04</div>
+          <div class="phase-main">
+            <div class="phase-tag">Ongoing Partnership</div>
+            <h3>Strategic Advisor Partnership</h3>
+            <div class="phase-meta">$5,000–$8,000 / month  ·  two tracks</div>
+            <p>Your behind-the-scenes secret weapon. Two tracks - determined by what the Genius Assessment reveals. <strong>Track A (Strategic Thought Partner)</strong> for visionary, externally-focused leaders. <strong>Track B (Execution Architect)</strong> for leaders whose genius is building from the inside out.</p>
+          </div>
+          <div class="phase-benefits">
+            <div class="phase-benefits-label">You walk away with</div>
+            <div class="phase-benefit">Monthly advisory - always in your corner</div>
+            <div class="phase-benefit">Quarterly strategy review and recalibration</div>
+            <div class="phase-benefit">Access to both partners' expertise</div>
+            <div class="phase-benefit">Priority support during high-stakes moments</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--cream); padding: 100px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">What We Believe</span>
+        <h2>Seven principles that guide everything.</h2>
+      </div>
+      <div class="principles">
+        <div class="principle"><div class="principle-dot"></div><p><strong>Focus creates advantage.</strong> Competitive advantage comes from concentrating resources where you can uniquely win - not spreading them thin.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>Leadership attention is the scarcest strategic resource.</strong> Where a leader spends their time and energy shapes the entire organization.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>Leaders must operate in their genius zone.</strong> When leaders spend time outside their highest-value work, the whole organization loses leverage.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>Organizations must know their distinctive advantage.</strong> Purpose, capability, and market opportunity must converge around a clear strategic focus.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>Purpose and strategy must reinforce each other.</strong> Impact and competitive advantage are not in tension - when aligned, purpose becomes a differentiator.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>Strategy must live in systems.</strong> Strategy that only exists in presentations will never change an organization.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>Execution problems are leadership design problems.</strong> Misalignment and stalled initiatives trace back to unclear strategy or leadership overload.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container">
+      <span class="label">Next step</span>
+      <h2>See which phase is right for you.</h2>
+      <p>Every engagement starts with a complimentary 45-minute discovery conversation. We'll help you figure out exactly where to begin.</p>
+      <a href="#" class="btn-primary" onclick="showPage('contact')">Book a Discovery Call →</a>
+    </div>
+  </section>
+</div><!-- end what we do -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- HOW WE HELP PAGE                               -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="page-how-we-help" class="page">
+  <div style="height:72px; background:var(--teal);"></div>
+
+  <section style="background:var(--teal); padding: 80px 0 100px;">
+    <div class="container">
+      <span class="label" style="color:rgba(255,255,255,0.4);">Who We Serve</span>
+      <h1 style="font-size:clamp(32px,4vw,56px); font-weight:800; color:var(--white); margin:16px 0 20px; letter-spacing:-0.03em; font-family:Montserrat,sans-serif;">How We Help</h1>
+      <p style="font-size:19px; font-weight:300; color:rgba(255,255,255,0.68); max-width:620px; line-height:1.65;">We work with leaders across industries. The common thread is a high-performing team that isn't delivering what it should - and a leader ready to look honestly at their own role in that.</p>
+    </div>
+  </section>
+
+  <section class="how-help">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Start Here</span>
+        <h2>What's your situation?</h2>
+        <p>We meet leaders where they are. Tell us which of these sounds most like you - and we'll show you exactly how we can help.</p>
+      </div>
+
+      <div class="problem-types">
+        <div class="problem-type">
+          <div class="problem-type-label">
+            <h3>"My strategy is unclear - I'm not sure where to focus."</h3>
+            <p>Strategic clarity challenge</p>
+          </div>
+          <div class="problem-type-content">
+            <p>You have too many priorities and no clear sense of where you can truly win. The market is moving, the team is busy, but the strategy feels diffuse. Ali's superpower is exactly this - surfacing the real strategic choices and trade-offs that create focus and competitive advantage.</p>
+            <div class="phase-benefit">Clarity on where your organization has a genuine right to win</div>
+            <div class="phase-benefit">Fewer, sharper priorities your team can actually execute against</div>
+            <div class="phase-benefit">Purpose and impact integrated into your growth strategy - not separate from it</div>
+            <p style="margin-top:16px; font-size:13px; color:var(--light);">→ Usually begins with the Strategic Genius Diagnostic, often leads to Phase 2.</p>
+          </div>
+        </div>
+
+        <div class="problem-type">
+          <div class="problem-type-label">
+            <h3>"My team is talented but not aligned - and I don't know why."</h3>
+            <p>Organizational alignment challenge</p>
+          </div>
+          <div class="problem-type-content">
+            <p>Good people working hard, but in different directions. Leaders "agree" in meetings but don't move together afterward. Kristy has built alignment systems inside some of the most complex organizations in tech - she knows exactly what's breaking down and how to fix it.</p>
+            <div class="phase-benefit">Every team member with a clear line of sight from their work to strategy</div>
+            <div class="phase-benefit">Roles and accountability that stick - without drama</div>
+            <div class="phase-benefit">Operating rhythms that keep everyone moving in the same direction</div>
+            <p style="margin-top:16px; font-size:13px; color:var(--light);">→ Usually begins with the Diagnostic, leads to Phase 3 (Operating System).</p>
+          </div>
+        </div>
+
+        <div class="problem-type">
+          <div class="problem-type-label">
+            <h3>"I'm burned out and bogged down - I can't lead effectively."</h3>
+            <p>Leadership effectiveness challenge</p>
+          </div>
+          <div class="problem-type-content">
+            <p>You're over-functioning. Decisions bottleneck around you. Your best thinking is going to the wrong things. This is the most common entry point for our work - and it's the one where we can create the most immediate relief and the most lasting change.</p>
+            <div class="phase-benefit">A clear picture of where you personally create the most value</div>
+            <div class="phase-benefit">Permission - and a plan - to stop doing the things that drain you</div>
+            <div class="phase-benefit">A team that can run without needing you in every room</div>
+            <p style="margin-top:16px; font-size:13px; color:var(--light);">→ Usually begins with the Diagnostic. Often leads to the Advisory Partnership.</p>
+          </div>
+        </div>
+
+        <div class="problem-type">
+          <div class="problem-type-label">
+            <h3>"I want impact and sustainability to be core to how we grow - not a side project."</h3>
+            <p>Purpose & sustainability challenge</p>
+          </div>
+          <div class="problem-type-content">
+            <p>You're building something that matters. But your sustainability and impact work feels disconnected from your business strategy. Ali spent 18 years proving that purpose and performance reinforce each other - when they're designed to. We help you build that integration intentionally.</p>
+            <div class="phase-benefit">Sustainability strategy built on materiality - driving real value, not checkbox ESG</div>
+            <div class="phase-benefit">Impact goals that reinforce competitive advantage, not compete with it</div>
+            <div class="phase-benefit">A foundation for B Corp certification or equivalent frameworks if that's your path</div>
+            <p style="margin-top:16px; font-size:13px; color:var(--light);">→ Usually part of Phase 2 (Genius Assessment), can stand alone as a focused engagement.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="partners-note">
+        <div class="label" style="color:rgba(255,255,255,0.4); margin-bottom:16px;">Strategic Partnerships</div>
+        <h3>We don't do everything. We know who does.</h3>
+        <p>For technical sustainability support - carbon accounting, certification programs, regulatory compliance - we work alongside specialized firms like ClimeCo and others in the impact ecosystem. We provide the strategic clarity and leadership alignment. They provide the technical rails. Together, we give mission-driven leaders a complete solution.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="fit">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Honest Assessment</span>
+        <h2>Is this a fit?</h2>
+      </div>
+      <div class="fit-grid">
+        <div class="fit-col fit-col--yes">
+          <div class="fit-header">This is a fit if…</div>
+          <div class="fit-item fit-item--yes">You're a founder, CEO, or senior leader accountable for results across teams</div>
+          <div class="fit-item fit-item--yes">You believe in your team but aren't seeing the results you expect</div>
+          <div class="fit-item fit-item--yes">You're ready to look at your own leadership as part of the solution</div>
+          <div class="fit-item fit-item--yes">You want a thought partner who has actually held your role</div>
+          <div class="fit-item fit-item--yes">You value clarity, judgment, and momentum over process theater</div>
+          <div class="fit-item fit-item--yes">You're building something that you believe makes the world better</div>
+        </div>
+        <div class="fit-col fit-col--no">
+          <div class="fit-header">This is not a fit if…</div>
+          <div class="fit-item fit-item--no">You want someone to run your projects or manage your teams for you</div>
+          <div class="fit-item fit-item--no">Leadership isn't willing to change how decisions are made</div>
+          <div class="fit-item fit-item--no">You're looking for off-the-shelf frameworks applied generically</div>
+          <div class="fit-item fit-item--no">You want someone else to "own" execution while you stay hands-off</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container">
+      <span class="label">Let's find out</span>
+      <h2>Not sure if it's a fit?<br>That's exactly what the discovery call is for.</h2>
+      <p>45 minutes. No pitch. We listen first, then tell you honestly whether this is the right partnership for where you are right now.</p>
+      <a href="#" class="btn-primary" onclick="showPage('contact')">Book a Discovery Call →</a>
+    </div>
+  </section>
+</div><!-- end how we help -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- ABOUT PAGE                                     -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div style="height:72px; background:var(--teal);"></div>
+
+  <section style="background:var(--teal); padding: 80px 0 100px;">
+    <div class="container">
+      <span class="label" style="color:rgba(255,255,255,0.4);">Who We Are</span>
+      <h1 style="font-size:clamp(32px,4vw,56px); font-weight:800; color:var(--white); margin:16px 0 20px; letter-spacing:-0.03em; font-family:Montserrat,sans-serif;">We've held your role.<br>We know what it actually takes.</h1>
+      <p style="font-size:19px; font-weight:300; color:rgba(255,255,255,0.68); max-width:640px; line-height:1.65;">Design for Impact was built by two leaders who have spent their careers inside the organizations our clients lead - making high-stakes decisions at the top of complex, fast-moving businesses. We don't advise from theory. We advise from experience.</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <div class="partners">
+        <div class="partner">
+          <div class="partner-role">Co-Founder</div>
+          <h3>Ali Kenney</h3>
+          <div class="partner-superpower">"She asks the questions that make leaders see differently."</div>
+          <p>Ali spent 18 years at Burton Snowboards, rising to become the company's first Chief Strategy Officer. She built Burton's sustainability program from a single proposal to Donna Carpenter into a core pillar of one of the world's most iconic brands - earning B Corporation certification, Fair Labor Association accreditation, and global recognition.</p>
+          <p>As CSO, Ali led global strategy, customer insights, environmental and social impact, and JEDI - building each team from scratch. She has led every part of a complex, mission-driven consumer business simultaneously: brand, product, culture, operations, and purpose.</p>
+          <p>Ali's superpower is seeing what leaders can't see from the inside. She holds the whole picture at once - and surfaces the strategic insight that changes how a leader thinks about everything.</p>
+          <div class="partner-tags">
+            <span class="tag">Corporate Strategy</span>
+            <span class="tag">Sustainability & ESG</span>
+            <span class="tag">Purpose Integration</span>
+            <span class="tag">Consumer Insights</span>
+            <span class="tag">B Corp</span>
+          </div>
+        </div>
+        <div class="partner">
+          <div class="partner-role">Co-Founder</div>
+          <h3>Kristy Troup</h3>
+          <div class="partner-superpower">"She builds the systems that make the new vision real."</div>
+          <p>Kristy built her career at the intersection of strategy and execution - leading teams, driving revenue growth, and building operating systems inside some of the most complex, fast-moving organizations in tech and commerce.</p>
+          <p>As GM of Promoted Listings at eBay, she led a $300M business - an environment where misalignment shows up immediately in the numbers, and where clarity and accountability were the difference between momentum and stall.</p>
+          <p>Kristy's superpower is translating strategic clarity into organizational reality - building the systems, rhythms, and accountability structures that make strategy executable without heroics.</p>
+          <div class="partner-tags">
+            <span class="tag">Strategy Execution</span>
+            <span class="tag">Operating Systems</span>
+            <span class="tag">Team Alignment</span>
+            <span class="tag">OKRs & Metrics</span>
+            <span class="tag">Revenue Growth</span>
+          </div>
+        </div>
+      </div>
+      <div class="together-bar">
+        <div class="together-line"></div>
+        <p><strong>Ali elevates the leader. Kristy elevates the organization.</strong> Together we close the gap between who a leader is and what their organization can become.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--cream); padding: 80px 0;">
+    <div class="container--narrow">
+      <div class="section-header">
+        <span class="label">How We Work</span>
+        <h2>What you can expect from us.</h2>
+      </div>
+      <div class="principles">
+        <div class="principle"><div class="principle-dot"></div><p><strong>We tell you what you need to hear, not what you want to hear.</strong> Real trust is built on honesty. We will name what we see, even when it's uncomfortable.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>We stay behind the scenes.</strong> Our clients look brilliant. We stay invisible. That's the point.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>We build things that hold without us.</strong> We never create dependency. Everything we build is designed to run on its own.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>We work with a small number of clients at a time.</strong> So we can show up fully for each one. This is not a volume business.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>We believe business can be a force for good.</strong> Impact and performance reinforce each other - when they're designed to.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>We're rooted in San Francisco and Burlington.</strong> We work with leaders across North America.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container">
+      <span class="label">Work with us</span>
+      <h2>Ready to meet?</h2>
+      <p>Every engagement starts with a conversation. Complimentary, 45 minutes, no pitch. Just listening.</p>
+      <a href="#" class="btn-primary" onclick="showPage('contact')">Start a Conversation →</a>
+    </div>
+  </section>
+</div><!-- end about -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- CONTACT PAGE                                   -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div style="height:72px; background:var(--teal);"></div>
+
+  <section style="background:var(--teal); padding: 80px 0 100px;">
+    <div class="container">
+      <span class="label" style="color:rgba(255,255,255,0.4);">Get in Touch</span>
+      <h1 style="font-size:clamp(32px,4vw,56px); font-weight:800; color:var(--white); margin:16px 0 20px; letter-spacing:-0.03em; font-family:Montserrat,sans-serif;">Let's find out if<br>we're the right fit.</h1>
+      <p style="font-size:19px; font-weight:300; color:rgba(255,255,255,0.68); max-width:600px; line-height:1.65;">We work with a small number of clients at a time - by design. Every engagement starts with a complimentary 45-minute discovery conversation.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <div class="section-header" style="margin-bottom:36px;">
+            <span class="label">Discovery Call Request</span>
+            <h2 style="font-size:28px;">Tell us about your situation.</h2>
+          </div>
+          <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="Ali">
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Kenney">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="you@company.com">
+            </div>
+            <div class="form-group">
+              <label>Company / Organization</label>
+              <input type="text" placeholder="Your company name">
+            </div>
+            <div class="form-group">
+              <label>What's the biggest challenge you're facing right now?</label>
+              <textarea placeholder="Tell us what's going on. There's no wrong answer - and the more honest you are, the more useful our conversation will be."></textarea>
+            </div>
+            <div class="form-group">
+              <label>How did you hear about us?</label>
+              <select>
+                <option value="">Select one</option>
+                <option>Referral from Ali Kenney</option>
+                <option>Referral from Kristy Troup</option>
+                <option>LinkedIn</option>
+                <option>Other referral</option>
+                <option>Web search</option>
+              </select>
+            </div>
+            <button type="submit" class="form-submit">Send →</button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <h3>We respond personally<br>within 48 hours.</h3>
+          <p>No intake team. No automated responses. When you reach out, you're reaching Ali and Kristy directly. We keep all conversations confidential.</p>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span class="contact-detail-label">Email</span>
+              <span class="contact-detail-value"><a href="/cdn-cgi/l/email-protection#274e494148674342544e40494e4a5746445309494253"><span class="__cf_email__" data-cfemail="f990979f96b99d9c8a909e97909489989a8dd7979c8d">[email&#160;protected]</span></a></span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-label">Phone</span>
+              <span class="contact-detail-value">(415) 497-2621</span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-label">Based in</span>
+              <span class="contact-detail-value">San Francisco, CA  ·  Burlington, VT</span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-label">Serves</span>
+              <span class="contact-detail-value">Leaders across North America</span>
+            </div>
+          </div>
+          <div class="contact-reassurance">
+            "We work with a small number of clients at a time. If we're not the right fit, we'll tell you - and point you toward what might serve you better."
+          </div>
+          <div style="margin-top:32px;">
+            <div class="label" style="margin-bottom:12px;">Follow Along</div>
+            <a href="https://www.linkedin.com/company/designfor-impact/" target="_blank" style="font-family:Montserrat,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal); text-decoration:none;">LinkedIn →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- end contact -->
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer>
+  <span class="footer-brand">Design for Impact</span>
+  <ul class="footer-links">
+    <li><a href="#" onclick="showPage('what-we-do')">What We Do</a></li>
+    <li><a href="#" onclick="showPage('how-we-help')">How We Help</a></li>
+    <li><a href="#" onclick="showPage('about')">About</a></li>
+    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+    <li><a href="https://www.linkedin.com/company/designfor-impact/" target="_blank">LinkedIn</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 Design for Impact  ·  San Francisco & Burlington  ·  <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e777078715e7a7b6d77797077736e7f7d6a30707b6a">[email&#160;protected]</a></p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + id);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  // Update nav active state
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.style.color = 'rgba(255,255,255,0.75)';
+  });
+  return false;
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = 'Message Sent ✓';
+  btn.style.background = 'var(--gold)';
+  btn.disabled = true;
+}
+
+// Fade in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.
